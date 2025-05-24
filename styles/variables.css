@@ -1,1 +1,41 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+
+    --bg-image: 
+     repeating-linear-gradient(
+        to right,
+        #d3d3d3 0,
+         #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        #d3d3d3 ,
+        #d3d3d3  2px,
+        transparent 2px,
+        transparent 4px
+      ), linear-gradient(150deg, #d3d3d3 0.01%, #1a1a1a 100%) ;
+
+    --main-font: 'Inter', sans-serif;
+
+    --accent-font: 'PressStart2', fantasy;
+    --normal-font-weight: 400;
+    --bold-font-weight: 700;
+
+    --background-text-color: var(--main-color);
+    --main-color: #fff;
+    --contour-color: var(--accent-color);
+    --bg-heart: rgba(255, 0, 0, 1);
+    --main-inline-size:  clamp(375px, 100%, 696px);
+
+
+    --cards-titles-font-size: 18px;
+    --card-lables-font-size: 14px;
+    --cards-main-text-font-size: 18px;
+    --button-text-font-size: 14px;
+
+    --card-text-paddings: 33px 23px 25px;
+    --accent-color: #000;
+    --label-text-stroke-color: rgb(255 255 255 / 0.5);
+}
