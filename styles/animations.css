@@ -10,124 +10,107 @@
 
 */
 @keyframes slide_buttons {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-.card__like-button:hover::before {
-    animation: slide_buttons 0.5s ease-in-out;
-    transform: translateX(0);
+.text_button:hover::before {
+  animation: slide_buttons 0.5s ease-in-out;
+  transform: translateX(0);
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s ease-in-out 0.05s;
+}
+
+.card__icon-button:hover .contour {
+  fill: var(--contour-color);
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill linear 0.3s 0.05s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--contour-color);
+  transition: fill linear 0.3s;
+}
+
+.card__icon-button:not(:hover) .main-body {
+  fill: transparent;
+  transition: fill linear 0.3s;
+}
+
+.card__icon-button:not(:hover) .core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--bg-heart);
+  transition: fill 0.3s linear 0.05s;
+}
+.card__icon-button:active .core {
+  fill: var(--bg-heart);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--bg-heart);
+  transition: fill 0.3s ease-in;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--bg-heart);
+  transition: fill 0.3s ease-in 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--bg-heart);
+  transition: fill 0.3s ease-in 0.06s;
+}
+
+@keyframes HeartScale {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
   }
-  
-  .save_button:hover::before {
-    animation: slide_buttons 0.5s ease-in-out;
-    transform: translateX(0);
+  50% {
+    transform: scale(1.25);
+    transform-origin: center;
   }
-
-
-  .like-icon  .main-body {
-    fill: transparent;
-    transition: fill 0.3s ease 0.05s;
+  100% {
+    transform: scale(1);
+    transform-origin: center;
   }
-  
-  .card__icon-button:hover .contour {
-    fill: var(--contour-color);
+}
+
+.like-icon.is-liked .heart {
+  animation: HeartScale 0.3s ease-in 0.1s 1 normal;
+}
+
+@keyframes SparksAppearance {
+  0% {
+    opacity: 0;
   }
-  
-  .card__icon-button:hover .main-body {
-    fill: var(--contour-color);
-    transition: fill ease 0.3s 0.05s;
+  50% {
+    opacity: 1;
   }
-
-
-  .card__icon-button:hover .core {
-    fill: var(--contour-color);
-    transition: fill ease 0.3s;
+  100% {
+    opacity: 0;
   }
+}
 
-  .card__icon-button:not(:hover) .main-body {
-    fill: transparent;
-    transition: fill ease 0.3s;
-  }
+.like-icon.is-liked .sparks {
+  animation: SparksAppearance 0.3s ease-in 0.3s 1 normal;
+}
 
-  .card__icon-button:not(:hover) .core {
-    fill: transparent;
-    transition: fill 0.3s ease 0.03s;
-  }
-
-  .card__icon-button:active  .main-body {
-    fill: var(--bg-heart);
-    transition: fill  0.3s ease 0.05s;
-  }
-  .card__icon-button:active .core {
-    fill: var(--bg-heart);
-    transition: fill 0.3s ease;
-  }
-
-  .like-icon.is-liked .core {
-    fill: var(--bg-heart);
-    transition: fill  0.3s ease;
-  }
-
-  .like-icon.is-liked .main-body {
-    fill: var(--bg-heart);
-    transition: fill 0.3s ease 0.05s;
-  }
-
-  .like-icon.is-liked .contour {
-    fill: var(--bg-heart);
-    transition: fill 0.3s ease 0.06s;
-
-  }
-
-  @keyframes HeartScale {
-    0% {
-        transform: scale(1);
-        transform-origin: center;
-    }
-    50% {
-        transform: scale(1.25);
-        transform-origin: center;
-    }
-    100% {
-        transform: scale(1);
-        transform-origin: center;
-    }
-  }
-
-
-  .like-icon.is-liked .heart {
-    animation: HeartScale 0.3s ease-in 0.1s 1 normal;
-  }
-
-  @keyframes SparksAppearance {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-  }
-
-  .like-icon.is-liked .sparks {
-    animation: SparksAppearance 0.3s ease-in 0.3s 1 normal;
-  }
-
-  .like-icon .contour {
-    transition-delay: 0.1s;
-  }
-
-
-
-
-
-
-
-
+.like-icon .contour {
+  transition-delay: 0.1s;
+}

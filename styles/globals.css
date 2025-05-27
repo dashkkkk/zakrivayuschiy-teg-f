@@ -6,6 +6,8 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -28,6 +30,12 @@ li {
 
 a {
   color: inherit;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 button,
