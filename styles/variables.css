@@ -27,14 +27,14 @@
   --main-color: #fff;
   --contour-color: var(--accent-color);
   --bg-heart: rgba(255, 0, 0, 1);
-  --main-inline-size: clamp(375px, 100%, 696px);
+  --main-inline-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
 
   --cards-titles-font-size: 18px;
   --card-lables-font-size: 14px;
   --cards-main-text-font-size: 18px;
   --button-text-font-size: 14px;
 
-  --card-text-paddings: 33px 23px 25px;
+  --card-text-paddings: 27px 25px 23px;
   --accent-color: #000;
   --label-text-stroke-color: rgb(255 255 255 / 0.5);
 }

@@ -13,7 +13,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, "Inter", sans-serif);
+  font-family: var(--main-font, "Inter"), sans-serif;
   font-variation-settings: "wght" var(--normal-font-weight, 400);
   display: flex;
   flex-direction: column;
@@ -22,8 +22,7 @@
   min-width: 375px;
   width: 100%;
   background-image: var(--bg-image);
-  background-size: 100% 100vh;
-  background-attachment: local;
+  background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
 }
@@ -37,7 +36,7 @@
 }
 
 .header_block {
-  font-family: var(--accent-font, "PressStart2P", "Arial", fantasy);
+  font-family: var(--accent-font, "PressStart2P"), "Arial", fantasy;
   border: 2px solid rgb(0 0 0);
   inset-block-start: 100px;
   inset-inline-end: 100px;
@@ -68,44 +67,49 @@
 }
 
 .main {
-  background-color: var(--main-color, #fff);
+  background-color: transparent;
   display: flex;
   flex-direction: column;
-  gap: 49px;
+  gap: 50px;
   align-items: center;
-  inline-size: var(--main-inline-size, clamp(375px, 100%, 696px));
+  inline-size: var(
+    --main-inline-size,
+    clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem)
+  );
   z-index: 1;
 }
 
 .card {
-  inline-size: var(--main-inline-size, clamp(375px, 100%, 696px));
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  width: var(
+    --main-inline-size,
+    clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem)
+  );
   border: 2px solid var(--accent-color, #000);
+  background-color: var(--main-color, #fff);
 }
 
 .card_title {
   font-size: var(--cards-titles-font-size, 18px);
-  padding: 5px 10px 3px 10px;
+  font-variation-settings: "wght" var(--bold-font-weight, 700);
   inline-size: 100%;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  padding-block-start: 5px;
+  padding-block-end: 6px;
 }
 
 .card__image-wrapper {
-  display: inline-block;
   position: relative;
-  width: var(--main-inline-size, clamp(375px, 100%, 696px));
   align-self: center;
-  z-index: -1;
   outline: 2px solid var(--accent-color, #000);
+  width: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
+  height: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
 }
 
 .card_image {
   inline-size: 100%;
-  block-size: 100%;
   object-fit: cover;
-  display: block;
-  outline: 2px solid var(--accent-color, #000);
+  aspect-ratio: 1/1;
 }
 
 .card_image_gray {
@@ -140,7 +144,7 @@
   inset-block-start: 25px;
   inset-inline-end: 11px;
   right: clamp(0.813rem, 1.127vw + 0.548rem, 1.563rem);
-  font-family: var(--accent-font, "PressStart2P", "Arial", fantasy);
+  font-family: var(--accent-font, "PressStart2P"), "Arial", fantasy;
   mix-blend-mode: hard-light;
   color: var(--label-color, rgb(1 1 1 / 0.5));
   font-size: var(--card-lables-font-size, 14px);
@@ -155,7 +159,7 @@
   line-height: 21px;
   display: flex;
   flex-direction: column;
-  padding: var(--card-text-paddings, 33px 23px 25px);
+  padding: var(--card-text-paddings, 27px 25px 23px);
   white-space: normal;
 }
 
@@ -181,7 +185,7 @@
 
 .button__text {
   font-size: var(--button-text-font-size, 14px);
-  font-family: var(--accent-font, "PressStart2P", "Arial", fantasy);
+  font-family: var(--accent-font, "PressStart2P"), "Arial", fantasy;
   color: var(--main-color, #fff);
   mix-blend-mode: difference;
   z-index: 2;
@@ -227,6 +231,7 @@
   background-color: transparent;
   overflow: hidden;
   position: relative;
+  background-color: var(--main-color, #fff);
 }
 
 .text_button:focus {
@@ -260,7 +265,7 @@
 }
 
 .button_memory-text {
-  font-family: var(--accent-font, "PressStart2P", "Arial", fantasy);
+  font-family: var(--accent-font, "PressStart2P"), "Arial", fantasy;
   font-size: var(--button-text-font-size, 14px);
   white-space: nowrap;
 }
@@ -297,7 +302,7 @@ dialog .floppy-icon {
 }
 
 .dialog_text {
-  font-family: var(--accent-font, "PressStart2P", "Arial", fantasy);
+  font-family: var(--accent-font, "PressStart2P"), "Arial", fantasy;
   font-size: var(--card-lables-font-size, 14px);
   text-transform: uppercase;
   line-height: 150%;
@@ -311,7 +316,7 @@ dialog .floppy-icon {
 }
 
 .dialog_button_text {
-  font-family: var(--accent-font, "PressStart2P", "Arial", fantasy);
+  font-family: var(--accent-font, "PressStart2P"), "Arial", fantasy;
   font-size: var(--button-text-font-size, 14px);
   text-transform: uppercase;
 }
@@ -324,7 +329,7 @@ dialog .floppy-icon {
   height: 100%;
   transform: translateX(-100%);
   z-index: 0;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #000);
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
 }
@@ -358,16 +363,12 @@ dialog .floppy-icon {
     inline-size: 100%;
   }
 
-  .card__image-wrapper {
-    inline-size: 100%;
-  }
-
-  .card_image {
-    inline-size: 100%;
+  .card_title {
+    padding: 3px 10px 5px 10px;
   }
 
   .card_text_container {
-    padding: 28px 25px 26px;
+    padding: 25px 25px 24px;
   }
 
   .floppy-icon {
